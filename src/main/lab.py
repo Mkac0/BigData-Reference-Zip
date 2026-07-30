@@ -5,7 +5,9 @@ def process_data():
 
     # Loading the transactions data from the CSV file into a pandas DataFrame
     file_path = r"src/data/transactions.csv" 
-    df = pd.read_csv(file_path, encoding="utf-8")
+    df = pd.read_csv(file_path, encoding="utf-8-sig")
+
+    df.columns = df.columns.str.strip()
     
     # Removing any rows with missing values in the DataFrame (Use dropna or another method)
     df.dropna(inplace=True)  # You can change this to other methods if required
