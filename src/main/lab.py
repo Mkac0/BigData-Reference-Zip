@@ -5,7 +5,7 @@ def process_data():
 
     # Loading the transactions data from the CSV file into a pandas DataFrame
     file_path = r"src/data/transactions.csv" 
-    df = pd.read_csv(file_path, encoding="utf-8-sig")
+    df = pd.read_csv(file_path, sep="\t", encoding="utf-8-sig")
 
     df.columns = df.columns.str.strip()
     
